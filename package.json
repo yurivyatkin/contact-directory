@@ -10,11 +10,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "prebuild": "npm run build:functions",
+    "prebuild": "npm run install:functions && npm run build:functions",
     "build": "react-scripts build",
+    "build:functions": "netlify functions:build --src functions/src --functions functions/build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:functions": "ENV=production ./build-functions.sh"
+    "install:functions": "ENV=production ./install-functions.sh"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -33,6 +34,7 @@
   },
   "devDependencies": {
     "http-proxy-middleware": "^0.19.1",
+    "netlify-cli": "^2.12.0",
     "prettier": "^1.18.2"
   }
 }

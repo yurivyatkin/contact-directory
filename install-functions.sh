@@ -19,6 +19,3 @@ cd ../..
 
 # remove old functions/build directory
 rm -rf functions/build
-
-# build the functions
-npx netlify functions:build --src functions/src --functions functions/build
