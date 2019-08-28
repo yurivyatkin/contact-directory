@@ -25,3 +25,6 @@ yarn-error.log*
 # Netlify
 /.netlify
 /functions/build
+
+# Tailwind CSS
+/src/tailwind.css
