@@ -64,7 +64,7 @@ TBD
 
 ## License
 
-This work is in the public domain.
+MIT
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
