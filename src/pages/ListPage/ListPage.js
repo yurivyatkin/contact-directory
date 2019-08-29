@@ -9,7 +9,7 @@ const ListPage = (props) => {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const result = await axios.get('/.netlify/functions/contacts');
+        const result = await axios.get('/api/contacts');
         setItems(result.data);
       } catch (e) {
         console.log('Error', e);
