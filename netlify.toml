@@ -20,11 +20,3 @@
   publish = "build" # Folder with the static content for _redirect file
 
   ## more info on configuring this file: https://www.netlify.com/docs/netlify-toml-reference/
-
-## This makes the front-end code look less coupled to the implementation:
-## (copied from https://github.com/maciejmatu/smoothielicious)
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
-  force = true
