@@ -1,10 +1,8 @@
 import React from 'react';
-import  ListPage  from './pages/ListPage';
+import ListPage from './pages/ListPage';
 
 function App() {
-  return (
-    <ListPage />
-  );
+  return <ListPage />;
 }
 
 export default App;

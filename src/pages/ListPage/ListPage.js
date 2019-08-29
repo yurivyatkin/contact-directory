@@ -19,7 +19,11 @@ const ListPage = (props) => {
     fetchItems();
   }, []);
 
-  return <ItemList items={items} />;
+  return (
+    <div className="bg-gray-200 py-6">
+      <ItemList items={items} />
+    </div>
+  );
 };
 
 // ListPage.propTypes = {

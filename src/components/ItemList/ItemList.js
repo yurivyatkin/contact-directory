@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ListItem from '../ListItem';
 
-const ItemList = props => {
+const ItemList = (props) => {
   return (
-    <div>
-      {JSON.stringify(props.items)}
-    </div>
+    <main className="flex-col container mx-auto p-3">
+      {props.items.map((item) => (
+        <ListItem key={item.id} data={item} />
+      ))}
+    </main>
   );
 };
 
