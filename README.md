@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ffc7dedb-b6d6-431d-a099-a8afd841c94f/deploy-status)](https://app.netlify.com/sites/contact-directory/deploys)
+
 # Contact Directory
 
 ## About
