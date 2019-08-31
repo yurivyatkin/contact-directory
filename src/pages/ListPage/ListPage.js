@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 // import PropTypes from 'prop-types';
-import ItemList from '../../components/ItemList';
+import { ItemList, PageHeader } from '../../components';
 
 const ListPage = (props) => {
   const [items, setItems] = useState([]);
@@ -20,7 +20,8 @@ const ListPage = (props) => {
   }, []);
 
   return (
-    <div className="bg-gray-200 py-6">
+    <div className="flex flex-col bg-gray-200 px-3 h-screen overflow-hidden">
+      <PageHeader />
       <ItemList items={items} />
     </div>
   );

@@ -4,7 +4,10 @@ import ListItem from '../ListItem';
 
 const ItemList = (props) => {
   return (
-    <main className="flex-col container mx-auto p-3">
+    <main
+      className="flex-col flex-grow overflow-y-scroll"
+      style={{ scrollbarWidth: 'none' }}
+    >
       {props.items.map((item) => (
         <ListItem key={item.id} data={item} />
       ))}
