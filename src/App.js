@@ -1,8 +1,15 @@
 import React from 'react';
-import ListPage from './pages/ListPage';
+import { ListPage, NotFoundPage } from './pages';
+import { useRoutes } from 'hookrouter';
+
+const routes = {
+  '/': () => <ListPage />,
+};
 
 function App() {
-  return <ListPage />;
+  const routeResult = useRoutes(routes);
+
+  return routeResult || <NotFoundPage />;
 }
 
 export default App;
