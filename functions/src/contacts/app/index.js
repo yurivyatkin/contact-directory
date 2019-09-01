@@ -5,11 +5,12 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const compression = require('compression');
 
-const data = require('./data');
+const routes = require('./routes');
 
 /* My express App */
 module.exports = function expressApp(functionName) {
   const app = express();
+
   const router = express.Router();
 
   // gzip responses
@@ -21,10 +22,7 @@ module.exports = function expressApp(functionName) {
       ? `/${functionName}`
       : `/.netlify/functions/${functionName}/`;
 
-  /* define routes */
-  router.get('/', (req, res) => {
-    res.json(data.users);
-  });
+  router.use('/', routes);
 
   // Attach logger
   app.use(morgan(customLogger));

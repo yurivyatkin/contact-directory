@@ -2,7 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import SearchInput from '../SearchInput';
 
-const PageHeader = (props) => {
+const ListHeader = (props) => {
   return (
     <header className="sticky top-0 flex-col pb-6 overflow-y-visible">
       <nav className="flex flex-col sm:flex-row items-start justify-between bg-gray-600 rounded-b-lg shadow p-6 max-w-2xl mx-auto">
@@ -13,8 +13,8 @@ const PageHeader = (props) => {
   );
 };
 
-// PageHeader.propTypes = {
+// ListHeader.propTypes = {
 
 // };
 
-export default PageHeader;
+export default ListHeader;

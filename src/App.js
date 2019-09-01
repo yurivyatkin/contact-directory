@@ -1,9 +1,10 @@
 import React from 'react';
-import { ListPage, NotFoundPage } from './pages';
+import { ItemPage, ListPage, NotFoundPage } from './pages';
 import { useRoutes } from 'hookrouter';
 
 const routes = {
   '/': () => <ListPage />,
+  '/contacts/:id': ({ id }) => <ItemPage id={id} />,
 };
 
 function App() {
