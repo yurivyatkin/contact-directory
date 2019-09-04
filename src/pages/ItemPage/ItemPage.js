@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { navigate } from 'hookrouter';
 
 import { fetchItem } from '../../api';
 import { ItemHeader, ItemView } from '../../components';
@@ -11,14 +12,23 @@ const ItemPage = (props) => {
 
   useEffect(() => {
     fetchItem(id, (data) => {
-      setContact(data);
+      // TODO: FIXME: Use a more adequate response format:
+      if (!data || Object.keys(data).length === 0) {
+        navigate('/');
+      } else {
+        setContact(data);
+      }
     });
   }, [id]);
 
   return (
     <div className="flex flex-col bg-gray-200 px-3 h-screen overflow-hidden">
-      <ItemHeader title={contact.name} />
-      <ItemView details={contact} />
+      {contact.name ? (
+        <div>
+          <ItemHeader title={contact.name} />
+          <ItemView details={contact} />
+        </div>
+      ) : null}
     </div>
   );
 };
