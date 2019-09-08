@@ -1,5 +1,5 @@
 import axios from 'axios';
-const apiPrefix = '/.netlify/functions/';
+const apiPrefix = '/.netlify/functions/api/';
 
 const fetchItem = async (id, callback) => {
   try {

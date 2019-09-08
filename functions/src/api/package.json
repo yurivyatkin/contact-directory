@@ -1,8 +1,8 @@
 {
-  "name": "serverless-ssr",
+  "name": "contacts-directory-api",
   "version": "1.0.0",
-  "description": "netlify functions:create - default template for a serverless SSR function",
-  "main": "serverless-ssr.js",
+  "description": "API server for contact-directory",
+  "main": "api.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +11,7 @@
     "serverless",
     "js"
   ],
-  "author": "Netlify",
+  "author": "Yuri Vyatkin",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.3",

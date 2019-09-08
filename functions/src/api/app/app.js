@@ -3,32 +3,23 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const compression = require('compression');
 
-const routes = require('./routes');
+const contacts = require('./contacts');
 
 /* My express App */
-module.exports = function expressApp(functionName) {
+module.exports = function expressApp(appPrefix) {
   const app = express();
 
   const router = express.Router();
 
-  // gzip responses
-  router.use(compression());
-
-  // Set router base path for local dev
-  const routerBasePath =
-    process.env.NODE_ENV === 'dev'
-      ? `/${functionName}`
-      : `/.netlify/functions/${functionName}/`;
-
-  router.use('/', routes);
+  // Attach routes
+  router.use('/contacts', contacts);
 
   // Attach logger
   app.use(morgan(customLogger));
 
   // Setup routes
-  app.use(routerBasePath, router);
+  app.use(appPrefix, router);
 
   // Apply express middlewares
   router.use(cors());
